@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <>
-      <h1 className="h1 m-3">Hello</h1>
+      <h1 className="h1 m-3"></h1>
     </>
   );
 }
