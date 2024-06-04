@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/navbar";
 
 export const metadata = {
   metadataBase: new URL("https://postgres-prisma.vercel.app"),
@@ -20,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="winter" lang="en">
-      <body className={inter.variable}>{children}</body>
+    <html lang="en">
+      <body className={inter.variable}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
