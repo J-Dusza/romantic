@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   metadataBase: new URL("https://postgres-prisma.vercel.app"),
