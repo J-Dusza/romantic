@@ -11,10 +11,22 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model users {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  image     String
-  createdAt DateTime @default(now())
+model platforms {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
+  shortname String? @unique
+  image     String?
+
+  roms roms[]
+}
+
+model roms {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String   @unique
+  image       String
+  releaseDate DateTime @default(now())
+
+  platform   platforms @relation(fields: [platformId], references: [id])
+  platformId Int
 }
