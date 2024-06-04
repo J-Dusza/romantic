@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <>
-      <button className="btn btn-primary">Button</button>
+      <h1 className="h1 m-3">Hello</h1>
     </>
   );
 }
