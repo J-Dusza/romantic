@@ -1,8 +1,6 @@
 import React from "react";
 
-type PlatformsGalleryProps = {};
-
-function PlatformsGallery(props) {
+function PlatformsGallery() {
   return <div>PlatformsGallery</div>;
 }
 
