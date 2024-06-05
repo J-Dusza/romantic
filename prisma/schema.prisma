@@ -16,6 +16,7 @@ model platforms {
   name      String  @unique
   shortname String? @unique
   image     String?
+  color     String?
 
   roms roms[]
 }

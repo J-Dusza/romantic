@@ -1,7 +1,8 @@
 import React from "react";
 import { roms } from "@prisma/client";
 import Image from "next/image";
-import { RomsWithPlatform } from "@/api/getRomsWithPlatform";
+import { RomsWithPlatform } from "@/controller/romsController";
+import { platform } from "os";
 
 type RomsGalleryProps = {
   roms: RomsWithPlatform[];
@@ -10,6 +11,10 @@ type RomsGalleryProps = {
 function RomsGallery({ roms }: RomsGalleryProps) {
   // make roms = 3* roms
   roms = roms.concat(roms).concat(roms);
+
+  roms.map((rom) => {
+    console.log(rom.platform.color);
+  });
 
   return (
     <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -26,7 +31,10 @@ function RomsGallery({ roms }: RomsGalleryProps) {
             height={150}
             priority
           />
-          <div className="w-full text-center text-sm bg-black text-white">
+          <div
+            className={`w-full text-center text-sm text-white`}
+            style={{ backgroundColor: rom.platform.color || "black" }}
+          >
             {rom.platform.shortname}
           </div>
           <div className="p-2">

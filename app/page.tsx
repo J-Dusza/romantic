@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import RomsGallery from "@/components/RomsGallery";
 import { roms } from "@prisma/client";
 import Button from "@/components/ui-components/Button";
-import { getRomsWithPlatform } from "@/api/getRomsWithPlatform";
+import { getRomsWithPlatform } from "@/controller/romsController";
 
 export default async function Home() {
   const roms = await getRomsWithPlatform();

@@ -10,7 +10,9 @@ async function main() {
     data: {
       name: "Nintendo Entertainment System",
       shortname: "NES",
-      image: "https://reaganray.com/img/blog/video-game-consoles/nes.png",
+      image:
+        "https://static.wikia.nocookie.net/logopedia/images/0/0d/NES_logo.svg/revision/latest?cb=20220520170257",
+      color: "#a5a2a2",
     },
   });
 
@@ -19,7 +21,8 @@ async function main() {
       name: "Super Nintendo Entertainment System",
       shortname: "SNES",
       image:
-        "https://reaganray.com/img/blog/video-game-consoles/super-nintendo.png",
+        "https://static.wikia.nocookie.net/logopedia/images/2/2c/SNES_logo.svg/revision/latest?cb=20210604013405",
+      color: "#b5b6e4",
     },
   });
 
@@ -28,7 +31,8 @@ async function main() {
       name: "Gameboy",
       shortname: "GB",
       image:
-        "https://reaganray.com/img/blog/video-game-consoles/super-nintendo.png",
+        "https://static.wikia.nocookie.net/logopedia/images/d/d5/Nintendo_Game_Boy_packaging.svg/revision/latest?cb=20220622191133",
+      color: "#3A3C9F",
     },
   });
 
