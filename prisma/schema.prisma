@@ -12,21 +12,23 @@ datasource db {
 }
 
 model platforms {
-  id        Int     @id @default(autoincrement())
-  name      String  @unique
-  shortname String? @unique
-  image     String?
-  color     String?
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  shortname   String? @unique
+  description String?
+  image       String?
+  color       String?
 
   roms roms[]
 }
 
 model roms {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   title       String
-  description String   @unique
+  description String    @unique
   image       String
-  releaseDate DateTime @default(now())
+  releaseDate DateTime? @default(now())
+  downloadUrl String?
 
   platform   platforms @relation(fields: [platformId], references: [id])
   platformId Int

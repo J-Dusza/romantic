@@ -9,7 +9,7 @@ type PlatformsGalleryProps = {
 
 function PlatformsGallery({ platforms }: PlatformsGalleryProps) {
   return (
-    <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
       {platforms.map((platform) => (
         <div
           key={platform.id}

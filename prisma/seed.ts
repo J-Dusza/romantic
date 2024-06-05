@@ -13,6 +13,8 @@ async function main() {
       image:
         "https://static.wikia.nocookie.net/logopedia/images/0/0d/NES_logo.svg/revision/latest?cb=20220520170257",
       color: "#a5a2a2",
+      description:
+        "Step back into the '80s with the iconic NES. Relive classic titles like Super Mario Bros., The Legend of Zelda, and Mega Man.",
     },
   });
 
@@ -23,16 +25,32 @@ async function main() {
       image:
         "https://static.wikia.nocookie.net/logopedia/images/2/2c/SNES_logo.svg/revision/latest?cb=20210604013405",
       color: "#b5b6e4",
+      description:
+        "Experience the golden age of 16-bit gaming with the SNES. Relive classics like Super Mario World, Donkey Kong Country, and Chrono Trigger.",
     },
   });
 
   const gameboy = await prisma.platforms.create({
     data: {
-      name: "Gameboy",
+      name: "Game Boy",
       shortname: "GB",
       image:
         "https://static.wikia.nocookie.net/logopedia/images/d/d5/Nintendo_Game_Boy_packaging.svg/revision/latest?cb=20220622191133",
       color: "#3A3C9F",
+      description:
+        "Travel back to the era of handheld gaming with the original Game Boy. Access a vast collection of classics like Pokémon Red and Blue, Tetris, and The Legend of Zelda: Link's Awakening.",
+    },
+  });
+
+  const gba = await prisma.platforms.create({
+    data: {
+      name: "Game Boy Advance",
+      shortname: "GBA",
+      image:
+        "https://static.wikia.nocookie.net/logopedia/images/a/a1/Gameboy_advance_logo_stacked.svg/revision/latest?cb=20220620020941",
+      color: "#1900CD",
+      description:
+        "Enjoy advanced portable gaming with the GBA. Download ROMs for Pokémon FireRed and LeafGreen, Metroid Fusion, and Mario Kart: Super Circuit.",
     },
   });
 
@@ -46,6 +64,7 @@ async function main() {
         image:
           "https://cdn2.steamgriddb.com/thumb/c0d1e37db869c1c58288290dba0810e1.jpg",
         platformId: nes.id,
+        releaseDate: new Date("1985-09-13"),
       },
       {
         title: "The Legend of Zelda: A Link to the Past",
@@ -54,6 +73,7 @@ async function main() {
         image:
           "https://cdn2.steamgriddb.com/thumb/c888280c65ec91eb9d20d2644575186e.jpg",
         platformId: snes.id,
+        releaseDate: new Date("1991-11-21"),
       },
       {
         title: "Tetris",
@@ -62,6 +82,7 @@ async function main() {
         image:
           "https://cdn2.steamgriddb.com/thumb/61a6ab285b480677841895cc5d251cf4.jpg",
         platformId: gameboy.id,
+        releaseDate: new Date("1989-07-31"),
       },
       {
         title: "Super Mario World",
@@ -70,6 +91,7 @@ async function main() {
         image:
           "https://cdn2.steamgriddb.com/thumb/0038c1adcc79bc78f93404fd9641e906.jpg",
         platformId: snes.id,
+        releaseDate: new Date("1990-11-21"),
       },
       {
         title: "Pokémon Red",
@@ -78,6 +100,26 @@ async function main() {
         image:
           "https://cdn2.steamgriddb.com/thumb/deaf47d9953d7c0216d9c3aa944fe5ba.jpg",
         platformId: gameboy.id,
+        releaseDate: new Date("1996-09-28"),
+      },
+      {
+        title: "Battletoads",
+        description:
+          "Battletoads is a video game media franchise by Rare that began with the original beat 'em up game Battletoads in 1991. Starring three anthropomorphic toads named after skin conditions, Rash, Zitz, and Pimple, the series was created to rival the Teenage Mutant Ninja Turtles games.",
+        image:
+          "https://cdn2.steamgriddb.com/thumb/5f2e2f400030f3f4a4d5d36e2aa6c003.jpg",
+        platformId: nes.id,
+        releaseDate: new Date("1991-06-01"),
+        downloadUrl: "/public/Roms/NES/Battletoads.nes",
+      },
+      {
+        title: "Pokémon FireRed",
+        description:
+          "Pokémon FireRed and Pokémon LeafGreen are 2004 role-playing video games developed by Game Freak, published by The Pokémon Company",
+        image:
+          "https://cdn2.steamgriddb.com/thumb/02364616164166b84371270ca2e6eda2.png",
+        platformId: gba.id,
+        releaseDate: new Date("2004-09-09"),
       },
     ],
   });

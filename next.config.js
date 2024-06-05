@@ -9,6 +9,10 @@ const nextConfig = {
     ],
     dangerouslyAllowSVG: true,
   },
+  // i18n: {
+  //   locales: ["pl", "en"],
+  //   defaultLocale: "en",
+  // },
 };
 
 module.exports = nextConfig;
