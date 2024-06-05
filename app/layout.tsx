@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   metadataBase: new URL("https://postgres-prisma.vercel.app"),
-  title: "Vercel Postgres Demo with Prisma",
+  title: "ROMantic",
   description:
-    "A simple Next.js app with Vercel Postgres as the database and Prisma as the ORM",
+    "ROMantic is a platform that offers a gateway to the golden age of gaming. Dive into a world of retro gaming fun!",
 };
 
 const inter = Inter({
