@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: ["images.ctfassets.net", "cdn2.steamgriddb.com"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
