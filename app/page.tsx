@@ -24,8 +24,8 @@ export default async function Home() {
         <div className="mb-4">
           Your ultimate destination for retro gaming! Our passion for classic
           games drives us to provide a comprehensive collection of ROMs for
-          various retro platforms. Whether you're a nostalgic gamer looking to
-          relive the golden days or a newcomer eager to explore the roots of
+          various retro platforms. Whether you&apos;re a nostalgic gamer looking
+          to relive the golden days or a newcomer eager to explore the roots of
           video gaming, ROMantic has something for everyone.
         </div>
         <div className="text-2xl rounded-lg font-bold text-center p-3 bg-slate-600 text-white">
