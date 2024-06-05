@@ -6,7 +6,7 @@ async function Platforms() {
   const platforms = await getAllPlatforms();
 
   return (
-    <div className="p-5 m-10">
+    <div className="p-5 m-10 min-h-screen">
       <h1 className="text-3xl font-bold mb-4">Choose a platform</h1>
       <p className="mb-8">
         We&apos;re thrilled to offer you a gateway to the golden age of gaming.

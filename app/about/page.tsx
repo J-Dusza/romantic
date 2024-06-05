@@ -2,7 +2,7 @@ import React from "react";
 
 function about() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6 min-h-screen">
       <div className="bg-white shadow-md rounded-lg max-w-3xl w-full p-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
           About ROMantic

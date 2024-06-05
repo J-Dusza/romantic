@@ -10,7 +10,7 @@ export default async function Home() {
   const roms = await getRomsWithPlatform();
 
   return (
-    <div className="flex flex-col md:flex-row p-5">
+    <div className="flex flex-col md:flex-row p-5 min-h-screen">
       {/* Left panel */}
       <div className="md:w-2/3 p-5">
         <RomsGallery roms={roms} />
