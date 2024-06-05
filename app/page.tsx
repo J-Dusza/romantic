@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import prisma from "@/lib/prisma";
 import { Suspense } from "react";
 import RomsGallery from "@/components/RomsGallery";
 import { roms } from "@prisma/client";
 import Button from "@/components/ui-components/Button";
+import { getRomsWithPlatform } from "@/api/getRomsWithPlatform";
 
 export default async function Home() {
-  const roms = await prisma.roms.findMany();
+  const roms = await getRomsWithPlatform();
 
   return (
     <div className="flex flex-col md:flex-row p-5">

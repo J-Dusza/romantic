@@ -1,9 +1,10 @@
 import React from "react";
 import { roms } from "@prisma/client";
 import Image from "next/image";
+import { RomsWithPlatform } from "@/api/getRomsWithPlatform";
 
 type RomsGalleryProps = {
-  roms: roms[];
+  roms: RomsWithPlatform[];
 };
 
 function RomsGallery({ roms }: RomsGalleryProps) {
@@ -26,7 +27,7 @@ function RomsGallery({ roms }: RomsGalleryProps) {
             priority
           />
           <div className="w-full text-center text-sm bg-black text-white">
-            {rom.platformId}
+            {rom.platform.shortname}
           </div>
           <div className="p-2">
             <div className="font-bold text-md">{rom.title}</div>

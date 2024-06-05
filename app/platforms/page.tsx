@@ -1,7 +1,7 @@
 import React from "react";
 
 function Platforms() {
-  return <div>platforms</div>;
+  return <div>div</div>;
 }
 
 export default Platforms;
