@@ -23,6 +23,7 @@ function RomsGallery({ roms }: RomsGalleryProps) {
             alt=""
             width={150}
             height={150}
+            priority
           />
           <div className="w-full text-center text-sm bg-black text-white">
             {rom.platformId}
