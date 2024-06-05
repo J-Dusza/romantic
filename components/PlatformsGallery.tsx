@@ -8,8 +8,6 @@ type PlatformsGalleryProps = {
 };
 
 function PlatformsGallery({ platforms }: PlatformsGalleryProps) {
-  console.log("Image path:", platforms[1].image);
-
   return (
     <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4">
       {platforms.map((platform) => (
