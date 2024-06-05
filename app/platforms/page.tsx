@@ -9,10 +9,10 @@ async function Platforms() {
     <div className="p-5 m-10">
       <h1 className="text-3xl font-bold mb-4">Choose a platform</h1>
       <p className="mb-8">
-        We're thrilled to offer you a gateway to the golden age of gaming.
-        Below, you'll find a variety of classic gaming platforms. Simply click
-        on any platform to explore an extensive collection of ROMs, emulators,
-        and more. Dive into a world of retro gaming fun!
+        We&apos;re thrilled to offer you a gateway to the golden age of gaming.
+        Below, you&apos;ll find a variety of classic gaming platforms. Simply
+        click on any platform to explore an extensive collection of ROMs,
+        emulators, and more. Dive into a world of retro gaming fun!
       </p>
 
       <PlatformsGallery platforms={platforms} />
