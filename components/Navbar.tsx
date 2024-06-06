@@ -3,10 +3,13 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { pages } from "@/models/pages";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import LanguageChanger from "./LanguageSwitcher";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPage = usePathname();
+  const { t } = useTranslation();
 
   return (
     <nav className={`bg-white border-gray-200 dark:bg-gray-900`}>
@@ -64,7 +67,7 @@ function Navbar() {
               type="text"
               id="search-navbar"
               className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search roms..."
+              placeholder={t("Navigation:Search")}
             />
           </div>
           <button
@@ -92,6 +95,7 @@ function Navbar() {
               />
             </svg>
           </button>
+          <LanguageChanger />
         </div>
         <div
           className={`items-center justify-between w-full md:flex md:w-auto md:order-1`}
@@ -119,7 +123,7 @@ function Navbar() {
               type="text"
               id="search-navbar-mobile"
               className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search roms..."
+              placeholder={t("Navigation:Search")}
             />
           </div>
           <ul
@@ -138,7 +142,7 @@ function Navbar() {
                   }`}
                   aria-current="page"
                 >
-                  {page.title}
+                  {t(`Navigation:${page.title}`)}
                 </Link>
               </li>
             ))}

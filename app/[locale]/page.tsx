@@ -5,9 +5,17 @@ import RomsGallery from "@/components/RomsGallery";
 import { roms } from "@prisma/client";
 import Button from "@/components/ui-components/Button";
 import { getRomsWithPlatform } from "@/controller/romsController";
+import initTranslations from "@/app/i18n";
 
-export default async function Home() {
+type HomeProps = {
+  params: {
+    locale: any;
+  };
+};
+
+export default async function Home({ params: { locale } }: HomeProps) {
   const roms = await getRomsWithPlatform();
+  const { t } = await initTranslations(locale, ["Home"]);
 
   return (
     <div className="flex flex-col md:flex-row p-5 min-h-screen">
@@ -19,23 +27,13 @@ export default async function Home() {
       {/* Right panel */}
       <div className="md:w-1/3 p-3 space-y-3">
         <div className=" text-2xl rounded-lg font-bold text-center p-3  bg-slate-600 text-white">
-          Welcome to ROMantic
+          {t("page_header")}
         </div>
-        <div className="mb-4">
-          Your ultimate destination for retro gaming! Our passion for classic
-          games drives us to provide a comprehensive collection of ROMs for
-          various retro platforms. Whether you&apos;re a nostalgic gamer looking
-          to relive the golden days or a newcomer eager to explore the roots of
-          video gaming, ROMantic has something for everyone.
-        </div>
+        <div className="mb-4">{t("page_description")}</div>
         <div className="text-2xl rounded-lg font-bold text-center p-3 bg-slate-600 text-white">
-          Find Us on Socials
+          {t("socials_header")}
         </div>
-        <div>
-          Stay connected with us and join the ROMantic community on our social
-          media platforms! Follow us for the latest updates, game highlights,
-          and to engage with fellow retro gaming enthusiasts.
-        </div>
+        <div>{t("socials_description")}</div>
         {/* Buttons */}
         <div className="grid grid-cols-2 gap-2">
           {/* Discord */}

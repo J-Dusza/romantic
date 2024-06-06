@@ -10,8 +10,7 @@ type RomsGalleryProps = {
 };
 
 function RomsGallery({ roms }: RomsGalleryProps) {
-  // make roms = 3* roms
-  roms = roms.concat(roms).concat(roms);
+  // roms = roms.concat(roms).concat(roms);
 
   return (
     <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4">
