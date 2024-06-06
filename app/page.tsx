@@ -39,7 +39,7 @@ export default async function Home() {
         {/* Buttons */}
         <div className="grid grid-cols-2 gap-2">
           {/* Discord */}
-          <div>
+          <Link href="https://discord.com">
             <Button className=" bg-[#7289da] text-white w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,9 +51,9 @@ export default async function Home() {
               </svg>
               Discord
             </Button>
-          </div>
+          </Link>
           {/* Twitter */}
-          <div>
+          <Link href="https://twitter.com">
             <Button className=" bg-[#00acee] text-white w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +65,9 @@ export default async function Home() {
               </svg>
               Twitter
             </Button>
-          </div>
+          </Link>
           {/* Instagram */}
-          <div>
+          <Link href="https://www.instagram.com/">
             <Button className=" bg-[#E1306C] text-white w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,9 +80,9 @@ export default async function Home() {
               </svg>
               Instagram
             </Button>
-          </div>
+          </Link>
           {/* Facebook */}
-          <div>
+          <Link href="https://www.facebook.com/">
             <Button className=" bg-[#1877f2] text-white w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export default async function Home() {
               </svg>
               Facebook
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
