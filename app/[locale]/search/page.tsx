@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { RomsWithPlatform } from "@/controller/romsController";
 import { useSearchParams } from "next/navigation";
 import prisma from "@/lib/prisma";
-import Breadcrumb from "@/components/Breadcrumb";
 
 async function page() {
   return (
