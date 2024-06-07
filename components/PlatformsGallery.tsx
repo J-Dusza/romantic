@@ -2,6 +2,7 @@ import { platforms } from "@prisma/client";
 import { platform } from "os";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type PlatformsGalleryProps = {
   platforms: platforms[];
@@ -11,7 +12,8 @@ function PlatformsGallery({ platforms }: PlatformsGalleryProps) {
   return (
     <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
       {platforms.map((platform) => (
-        <div
+        <Link
+          href={`/platforms/${platform.shortname}`}
           key={platform.id}
           className="h-auto max-w-full rounded-lg shadow-lg hover:scale-105 hover:cursor-pointer transform transition-transform duration-300 ease-in-out bg-white"
         >
@@ -30,7 +32,7 @@ function PlatformsGallery({ platforms }: PlatformsGalleryProps) {
           <div className="p-2">
             <div className="font-bold text-md">{platform.name}</div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

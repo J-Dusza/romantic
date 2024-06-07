@@ -5,11 +5,20 @@ import { pages } from "@/models/pages";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import LanguageChanger from "./LanguageSwitcher";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPage = usePathname();
+  const router = useRouter();
   const { t } = useTranslation();
+
+  const handleSearch = (e: any) => {
+    e.preventDefault();
+    // search-navbar
+    console.log(e.target[0].value);
+    router.push(`/search?title=${e.target[0].value}`);
+  };
 
   return (
     <nav className={`bg-white border-gray-200 dark:bg-gray-900`}>
@@ -63,12 +72,14 @@ function Navbar() {
               </svg>
               <span className="sr-only">Search icon</span>
             </div>
-            <input
-              type="text"
-              id="search-navbar"
-              className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder={t("Navigation:Search")}
-            />
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                id="search-navbar"
+                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder={t("Navigation:Search")}
+              />
+            </form>
           </div>
           <button
             data-collapse-toggle="navbar-search"
@@ -119,12 +130,14 @@ function Navbar() {
                 />
               </svg>
             </div>
-            <input
-              type="text"
-              id="search-navbar-mobile"
-              className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder={t("Navigation:Search")}
-            />
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                id="search-navbar-mobile"
+                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder={t("Navigation:Search")}
+              />
+            </form>
           </div>
           <ul
             className={`md:flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 md:flex-row ${
