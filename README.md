@@ -15,4 +15,6 @@ It has been achieved using react-i18next library. The interesting part is the ex
 This has been achieved using react-cookie library. It works as expected and shows popup if user hasn't yet agreed to store his data.
 
 ## Running the application
-This application is designe to be run on vercel with the integration to the vercel postgresql
+This application is designe to be run on vercel with the integration to the vercel postgresql.
+It is currently running at: 
+- https://romantic-games.vercel.app
